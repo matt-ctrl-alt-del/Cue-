@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b4rj7waugqxfy"]
+
+[ext_resource type="Script" uid="uid://b4eogntqh3qm2" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cypcw6eoew21o" path="res://sprites/aseprite/char.png" id="2_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqjtg"]
+radius = 9.0
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqjtg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=791027806]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=479145721]
+shape = SubResource("CapsuleShape2D_yqjtg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=988593496]
+sprite_frames = SubResource("SpriteFrames_yqjtg")
+autoplay = "default"
+frame_progress = 0.002897908
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1893384446]
+zoom = Vector2(5, 5)
