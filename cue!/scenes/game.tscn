@@ -1,12 +1,189 @@
 [gd_scene format=3 uid="uid://bpj84l3tu46ob"]
 
+[ext_resource type="Script" uid="uid://b803e6rlf6pda" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b4g2w5do4lwbi" path="res://scenes/map.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b4rj7waugqxfy" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dgbunlrto6vf5" path="res://sprites/exit.png" id="3_lnu2h"]
+[ext_resource type="AudioStream" uid="uid://bp40dsjjldd5p" path="res://audio/game.mp3" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://f76txl1w76ck" path="res://scenes/vinyl_1.tscn" id="5_gee14"]
+[ext_resource type="PackedScene" uid="uid://d2hcl63lda8ai" path="res://scenes/vinyl_2.tscn" id="6_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dtql2i14ip4p7" path="res://scenes/vinyl_tracker.tscn" id="7_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://drx8hnyuj6rqt" path="res://scenes/Vinyl_3.tscn" id="7_vtaks"]
+[ext_resource type="Texture2D" uid="uid://bto16m3bp51sw" path="res://sprites/Screenshot 2026-06-26 201954.png" id="8_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bxdh7tlnj76kf" path="res://scenes/Vinyl_4.tscn" id="8_kvpfn"]
+[ext_resource type="Script" uid="uid://xh2a7j8kfxs" path="res://scripts/sub_viewport.gd" id="8_kvuet"]
+[ext_resource type="Texture2D" uid="uid://lya5ocyjmff3" path="res://sprites/aseprite/chrbox.png" id="10_trtic"]
+[ext_resource type="PackedScene" uid="uid://7oolgx78yr5n" path="res://scenes/Fade_transition.tscn" id="10_vtaks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbl1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5sy4"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gee14"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tnpc"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvpfn"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dinhu"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvuet"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbl1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbhrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iywne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p57ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5sy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gee14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tnpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtaks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvpfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dinhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvuet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trtic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir15t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=1387623838]
+script = ExtResource("1_0tnpc")
 
 [node name="Map" parent="." unique_id=1867039915 instance=ExtResource("1_uwrxv")]
 
 [node name="player" parent="." unique_id=791027806 instance=ExtResource("2_yqjtg")]
 position = Vector2(25, 603)
 scale = Vector2(0.55, 0.55)
+
+[node name="Exit" type="Area2D" parent="." unique_id=875783417]
+position = Vector2(139, 462)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1511318627]
+shape = SubResource("RectangleShape2D_mbl1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Exit" unique_id=1829661651]
+sprite_frames = SubResource("SpriteFrames_mbl1c")
+autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=871422071]
+stream = ExtResource("4_lbhrr")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=124378708]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1513538276 instance=ExtResource("10_vtaks")]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=947379308]
+offset_left = 25.0
+offset_top = 104.0
+offset_right = 151.0
+offset_bottom = 127.0
+text = "Vinyls Collected:"
+
+[node name="Vinyl_tracker" parent="CanvasLayer" unique_id=645285928 instance=ExtResource("7_kvpfn")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1638286645]
+offset_left = 1028.0
+offset_top = 25.0
+offset_right = 1128.0
+offset_bottom = 125.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1797892204]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+script = ExtResource("8_kvuet")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1543468403]
+texture = ExtResource("8_dinhu")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=219516602]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer" unique_id=1728786857]
+position = Vector2(50, 50)
+texture = ExtResource("10_trtic")
+
+[node name="Vinyls" type="Node" parent="." unique_id=1553925473]
+
+[node name="Vinyl_1" parent="Vinyls" unique_id=1532596590 instance=ExtResource("5_gee14")]
+position = Vector2(163, 580)
+
+[node name="Vinyl_2" parent="Vinyls" unique_id=468707118 instance=ExtResource("6_0tnpc")]
+position = Vector2(85, 469)
+
+[node name="Vinyl_3" parent="Vinyls" unique_id=1939062134 instance=ExtResource("7_vtaks")]
+position = Vector2(96, 510)
+
+[node name="Vinyl_4" parent="Vinyls" unique_id=652701414 instance=ExtResource("8_kvpfn")]
+position = Vector2(178, 508)
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="Vinyls/Vinyl_1" to="." method="_on_vinyl_1_body_entered"]
+[connection signal="body_entered" from="Vinyls/Vinyl_2" to="." method="_on_vinyl_2_body_entered"]
+[connection signal="body_entered" from="Vinyls/Vinyl_3" to="." method="_on_vinyl_3_body_entered"]
+[connection signal="body_entered" from="Vinyls/Vinyl_4" to="." method="_on_vinyl_4_body_entered"]

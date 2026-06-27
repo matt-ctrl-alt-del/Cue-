@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://f76txl1w76ck"]
+
+[ext_resource type="Texture2D" uid="uid://b5auyvgq0s6w1" path="res://sprites/aseprite/vinyl.png" id="1_1e1py"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1e1py"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd5fa"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arao7"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2piwj"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_005ad"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj25p"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfrp"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8gbs"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmbwq"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s70gg"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gs7a"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjwtb"]
+atlas = ExtResource("1_1e1py")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbl1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd5fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arao7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2piwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_005ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj25p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8gbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmbwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s70gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gs7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjwtb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Vinyl1" type="Area2D" unique_id=1532596590]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2029345768]
+shape = SubResource("CircleShape2D_1e1py")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=439037252]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mbl1c")
+autoplay = "default"

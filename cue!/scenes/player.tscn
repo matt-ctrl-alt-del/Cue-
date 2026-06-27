@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cypcw6eoew21o" path="res://sprites/aseprite/char.png" id="2_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqjtg"]
-radius = 9.0
-height = 22.0
+radius = 11.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -25,7 +25,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 3.0
 }]
 
@@ -37,8 +37,8 @@ shape = SubResource("CapsuleShape2D_yqjtg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=988593496]
 sprite_frames = SubResource("SpriteFrames_yqjtg")
-autoplay = "default"
-frame_progress = 0.002897908
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893384446]
 zoom = Vector2(5, 5)

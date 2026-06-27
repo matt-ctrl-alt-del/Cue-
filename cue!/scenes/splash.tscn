@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6qu83odbge1j" path="res://scripts/splash.gd" id="1_10vqf"]
 [ext_resource type="Texture2D" uid="uid://cpeen5fwgpt5c" path="res://sprites/splash.png" id="1_86pdq"]
 [ext_resource type="PackedScene" uid="uid://byrue6kqs7btj" path="res://scenes/main_menu.tscn" id="2_4rrho"]
+[ext_resource type="Texture2D" uid="uid://vrjp6rl4m10" path="res://sprites/aseprite/splash2.png" id="4_5svwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10vqf"]
 atlas = ExtResource("1_86pdq")
@@ -44,6 +45,46 @@ region = Rect2(0, 5184, 1152, 648)
 atlas = ExtResource("1_86pdq")
 region = Rect2(0, 5832, 1152, 648)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_arxou"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdut7"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqg0r"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1bx2"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6ada"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48swi"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 3240, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4wtt"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 3888, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40qbc"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 4536, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv8op"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 5184, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awqoi"]
+atlas = ExtResource("4_5svwm")
+region = Rect2(0, 5832, 1152, 648)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbl1c"]
 animations = [{
 "frames": [{
@@ -80,6 +121,41 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arxou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdut7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1bx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6ada")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48swi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4wtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40qbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv8op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awqoi")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Splash" type="Control" unique_id=1226103961 node_paths=PackedStringArray("splash_screen")]
@@ -115,5 +191,5 @@ mouse_filter = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer" unique_id=364327184]
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_mbl1c")
-autoplay = "default"
-frame_progress = 0.5808541
+animation = &"new_animation"
+autoplay = "new_animation"

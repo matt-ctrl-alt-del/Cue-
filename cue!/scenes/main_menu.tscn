@@ -1,3 +1,71 @@
 [gd_scene format=3 uid="uid://byrue6kqs7btj"]
 
-[node name="Main_menu" type="Node2D" unique_id=931567858]
+[ext_resource type="Texture2D" uid="uid://b4ur1uxrk1ga6" path="res://sprites/aseprite/main_menu1.png" id="1_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://7oolgx78yr5n" path="res://scenes/Fade_transition.tscn" id="1_l6cm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqt6"]
+atlas = ExtResource("1_ekxnf")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("1_ekxnf")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("1_ekxnf")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("1_ekxnf")
+region = Rect2(3456, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbl1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqqt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main_menu" type="Control" unique_id=296589977]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Container" type="Control" parent="." unique_id=160662773]
+anchors_preset = 0
+
+[node name="Play" type="TextureButton" parent="Container" unique_id=1077349136]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 453.0
+offset_right = 564.0
+offset_bottom = 499.0
+
+[node name="Exit" type="TextureButton" parent="Container" unique_id=798789859]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 453.0
+offset_right = 564.0
+offset_bottom = 499.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=401359374]
+position = Vector2(575, 324)
+sprite_frames = SubResource("SpriteFrames_mbl1c")
+autoplay = "default"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=431859793]
+
+[node name="Fade" parent="CanvasLayer" unique_id=1513538276 instance=ExtResource("1_l6cm7")]
+visible = false
