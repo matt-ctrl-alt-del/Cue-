@@ -3,6 +3,10 @@ extends Node2D
 var vinyls_collected = 0
 var goal_vinyls = 4
 
+@export var max_light: float = 100.0
+@onready var current_light: float = max_light
+@export var light_drain_rate: float = 0.25 # Loses 5 light per second
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +20,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	current_light -= light_drain_rate * delta
+	current_light = clamp(current_light, 0.0, max_light)
+	$CanvasLayer/TextureProgressBar.value = current_light
+	
+	if current_light <= 0:
+		get_tree().reload_current_scene()
+
 
 
 func _on_vinyl_1_body_entered(body: Node2D) -> void:

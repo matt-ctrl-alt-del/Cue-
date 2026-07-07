@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpeen5fwgpt5c" path="res://sprites/splash.png" id="1_86pdq"]
 [ext_resource type="PackedScene" uid="uid://byrue6kqs7btj" path="res://scenes/main_menu.tscn" id="2_4rrho"]
 [ext_resource type="Texture2D" uid="uid://vrjp6rl4m10" path="res://sprites/aseprite/splash2.png" id="4_5svwm"]
+[ext_resource type="AudioStream" uid="uid://10na20od180v" path="res://audio/motif.mp3" id="5_31efs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10vqf"]
 atlas = ExtResource("1_86pdq")
@@ -193,3 +194,7 @@ position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_mbl1c")
 animation = &"new_animation"
 autoplay = "new_animation"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1271406384]
+stream = ExtResource("5_31efs")
+autoplay = true

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4eogntqh3qm2" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cypcw6eoew21o" path="res://sprites/aseprite/char.png" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://bcjidhk878s7s" path="res://scripts/LightComponent.gd" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqjtg"]
 radius = 11.0
@@ -42,3 +43,8 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893384446]
 zoom = Vector2(5, 5)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1064485418]
+position = Vector2(85, 50)
+script = ExtResource("3_qhqgy")
+flicker = 0.3

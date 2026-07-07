@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b4g2w5do4lwbi" path="res://scenes/map.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b4rj7waugqxfy" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://dgbunlrto6vf5" path="res://sprites/exit.png" id="3_lnu2h"]
-[ext_resource type="AudioStream" uid="uid://bp40dsjjldd5p" path="res://audio/game.mp3" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://f76txl1w76ck" path="res://scenes/vinyl_1.tscn" id="5_gee14"]
+[ext_resource type="AudioStream" uid="uid://c6d3jaqh10q5e" path="res://audio/menu.mp3" id="5_trtic"]
 [ext_resource type="PackedScene" uid="uid://d2hcl63lda8ai" path="res://scenes/vinyl_2.tscn" id="6_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dtql2i14ip4p7" path="res://scenes/vinyl_tracker.tscn" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://drx8hnyuj6rqt" path="res://scenes/Vinyl_3.tscn" id="7_vtaks"]
@@ -14,6 +14,10 @@
 [ext_resource type="Script" uid="uid://xh2a7j8kfxs" path="res://scripts/sub_viewport.gd" id="8_kvuet"]
 [ext_resource type="Texture2D" uid="uid://lya5ocyjmff3" path="res://sprites/aseprite/chrbox.png" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://7oolgx78yr5n" path="res://scenes/Fade_transition.tscn" id="10_vtaks"]
+[ext_resource type="Texture2D" uid="uid://btj1ijg4mmmuo" path="res://sprites/buttons/background_progressbar.png" id="11_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://balhnqqbinkla" path="res://sprites/buttons/main_progressbar.png" id="12_264po"]
+[ext_resource type="Script" uid="uid://demdptd12u83a" path="res://scripts/LightingManager.gd" id="15_ca42v"]
+[ext_resource type="Shader" uid="uid://d2bprjpw2tgxd" path="res://scenes/game.gdshader" id="16_rysoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbl1c"]
 
@@ -109,6 +113,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_guojw"]
+shader = ExtResource("16_rysoc")
+shader_parameter/light_count = 0
+shader_parameter/light_positions = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/light_radii = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/light_colors = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/light_intensities = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/obstructor_count = 0
+shader_parameter/obstructor_positions = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/obstructor_radii = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/ambient = 0.05
+shader_parameter/darkness_color = Color(0.02, 0.02, 0.06, 1)
+shader_parameter/dither_levels = 6.0
+shader_parameter/softness = 0.3
+shader_parameter/light_curve = 1.6
+shader_parameter/dither_pixel_size = 2.0
+shader_parameter/light_glow = 0.15
+shader_parameter/occlusion_enabled = true
+
 [node name="Game" type="Node2D" unique_id=1387623838]
 script = ExtResource("1_0tnpc")
 
@@ -119,7 +142,7 @@ position = Vector2(25, 603)
 scale = Vector2(0.55, 0.55)
 
 [node name="Exit" type="Area2D" parent="." unique_id=875783417]
-position = Vector2(139, 462)
+position = Vector2(1110, 99)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1511318627]
 shape = SubResource("RectangleShape2D_mbl1c")
@@ -129,13 +152,15 @@ sprite_frames = SubResource("SpriteFrames_mbl1c")
 autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=871422071]
-stream = ExtResource("4_lbhrr")
+stream = ExtResource("5_trtic")
+pitch_scale = 0.7
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=124378708]
+layer = 5
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=1513538276 instance=ExtResource("10_vtaks")]
-visible = false
+z_index = 3
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=947379308]
 offset_left = 25.0
@@ -159,6 +184,7 @@ render_target_update_mode = 4
 script = ExtResource("8_kvuet")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1543468403]
+visible = false
 texture = ExtResource("8_dinhu")
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=219516602]
@@ -168,19 +194,45 @@ zoom = Vector2(0.6, 0.6)
 position = Vector2(50, 50)
 texture = ExtResource("10_trtic")
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2079457913]
+offset_left = 500.0
+offset_top = 42.0
+offset_right = 672.0
+offset_bottom = 84.0
+texture_under = ExtResource("11_ssvqc")
+texture_progress = ExtResource("12_264po")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=183818268]
+offset_left = 560.0
+offset_top = 84.0
+offset_right = 605.0
+offset_bottom = 107.0
+text = "Timer"
+
 [node name="Vinyls" type="Node" parent="." unique_id=1553925473]
 
 [node name="Vinyl_1" parent="Vinyls" unique_id=1532596590 instance=ExtResource("5_gee14")]
-position = Vector2(163, 580)
+position = Vector2(186, 603)
 
 [node name="Vinyl_2" parent="Vinyls" unique_id=468707118 instance=ExtResource("6_0tnpc")]
-position = Vector2(85, 469)
+position = Vector2(104, 91)
 
 [node name="Vinyl_3" parent="Vinyls" unique_id=1939062134 instance=ExtResource("7_vtaks")]
-position = Vector2(96, 510)
+position = Vector2(1091, 319)
 
 [node name="Vinyl_4" parent="Vinyls" unique_id=652701414 instance=ExtResource("8_kvpfn")]
-position = Vector2(178, 508)
+position = Vector2(1070, 562)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1904754306]
+script = ExtResource("15_ca42v")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=185777333]
+material = SubResource("ShaderMaterial_guojw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_entered" from="Vinyls/Vinyl_1" to="." method="_on_vinyl_1_body_entered"]
