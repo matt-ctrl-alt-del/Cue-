@@ -4,10 +4,10 @@
 <hr>
 
 <h3> Controls: </h3>
-W - Move up
-A - Move left
-S - Move down
-D - Move right
+W - Move up,
+A - Move left,
+S - Move down,
+D - Move right,
 
 <h3> Context: </h3>
 A game I made as a submission to The Very Serious Juniper Dev Game Jam 2026 & Hack Club Jame Gam.
