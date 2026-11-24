@@ -12,6 +12,10 @@ D - Move right.
 <h3> Context: </h3>
 A game I made as a submission to The Very Serious Juniper Dev Game Jam 2026 & Hack Club Jame Gam.
 
+<h3> Play: </h3>
+It can be played at: 
+https://matt-not-found.itch.io/cue
+
 <h3> Tools: </h3>
 I used Godot and Gdscript, for the art I used Aseprite/Libresprite. The sound is not made by me, I got it on the internet.
 
